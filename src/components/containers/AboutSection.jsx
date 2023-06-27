@@ -77,6 +77,14 @@ const AboutSection = () => {
                 : {data.nationality}
               </li>
             )}
+            {data.mySons.length > 0 && (
+                <li className="text-lg">
+                  <strong className="inline-block min-w-[120px] font-medium">
+                    Hij@s{" "}
+                  </strong>
+                  : {data.mySons.join(', ')}
+                </li>
+            )}
             {data.languages.length ? (
               <li className="text-lg">
                 <strong className="inline-block min-w-[120px] font-medium">
