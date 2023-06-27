@@ -1,5 +1,6 @@
+import { useState, useEffect } from 'react';
 import Image from "next/image";
-import { imageLoader, shimmer, toBase64 } from "../../lib/utils";
+import { imageLoader, shimmer, toBase64, getAge } from "../../lib/utils";
 import { motion } from "framer-motion";
 import { childrenAnimation } from "../../lib/motion";
 import { getInformation } from "../../fetchers";
@@ -7,6 +8,11 @@ import { useQuery } from "react-query";
 
 const AboutSection = () => {
   const { data } = useQuery("information", getInformation);
+  const [ age, setAge ] = useState(0);
+
+  useEffect(() => {
+    setAge(getAge());
+  }, [])
 
   if (!data) return null;
 
@@ -52,37 +58,21 @@ const AboutSection = () => {
           className="about-content"
         >
           <h3>
-            Hi, I am <span className="text-primary">{data.fullName}</span>
+            Hola, soy <span className="text-primary">{data.fullName}</span>
           </h3>
           <ul className="styledlist">
-            {data.firstName && (
+            {age > 0 && (
               <li className="text-lg">
                 <strong className="inline-block min-w-[120px] font-medium">
-                  First Name{" "}
+                  Edad{" "}
                 </strong>
-                : {data.firstName}
-              </li>
-            )}
-            {data.lastName && (
-              <li className="text-lg">
-                <strong className="inline-block min-w-[120px] font-medium">
-                  Last Name{" "}
-                </strong>
-                : {data.lastName}
-              </li>
-            )}
-            {data.age && (
-              <li className="text-lg">
-                <strong className="inline-block min-w-[120px] font-medium">
-                  Age{" "}
-                </strong>
-                : {data.age} years
+                : {age} años
               </li>
             )}
             {data.nationality && (
               <li className="text-lg">
                 <strong className="inline-block min-w-[120px] font-medium">
-                  Nationality{" "}
+                  Nacionalidad{" "}
                 </strong>
                 : {data.nationality}
               </li>
@@ -90,7 +80,7 @@ const AboutSection = () => {
             {data.languages.length ? (
               <li className="text-lg">
                 <strong className="inline-block min-w-[120px] font-medium">
-                  Languages{" "}
+                  Idiomas{" "}
                 </strong>
                 : {data.languages.join(", ")}
               </li>
@@ -98,7 +88,7 @@ const AboutSection = () => {
             {data.address && (
               <li className="text-lg">
                 <strong className="inline-block min-w-[120px] font-medium">
-                  Address{" "}
+                  Dirección{" "}
                 </strong>
                 : {data.address}
               </li>
@@ -113,7 +103,7 @@ const AboutSection = () => {
             )}
           </ul>
           <a href="/resume.pdf" className="btn mt-3">
-            <span>Download Resume</span>
+            <span>Descarga CV</span>
           </a>
         </motion.div>
       </div>

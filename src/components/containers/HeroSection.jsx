@@ -60,7 +60,7 @@ const HeroSection = ({ blurred, scroll = true, typed = true }) => {
                 variants={childrenAnimation}
                 className="mb-5 text-heading"
               >
-                <span className="block sm:inline">Hi, I am</span>{" "}
+                <span className="block sm:inline">Hola, soy</span>{" "}
                 {typed ? (
                   <ReactTyped
                     loop
@@ -69,8 +69,9 @@ const HeroSection = ({ blurred, scroll = true, typed = true }) => {
                     backDelay={2000}
                     strings={[
                       data.fullName,
-                      "Full-stack Developer",
-                      "Web Designer",
+                      "Desarrollador",
+                      "Freelancer",
+                      "amante de la fotografía"
                     ]}
                     className="text-primary"
                   />
@@ -119,7 +120,7 @@ const HeroSection = ({ blurred, scroll = true, typed = true }) => {
                 className="cursor-pointer text-xs font-medium uppercase tracking-widest transition-all hover:text-primary"
               >
                 <RiArrowDownLine className="inline animate-bounce text-base" />
-                <span className="pl-2">Scroll Down</span>
+                <span className="pl-2">Explorar</span>
               </Link>
             </motion.div>
           ) : null}

@@ -20,3 +20,10 @@ export const toBase64 = (str) =>
 export const imageLoader = (src) => {
     return src;
 };
+
+export const getAge = () => {
+    const diff = Date.now() - new Date(1989, 9, 28).getTime();
+    const ageDt = new Date(diff);
+
+    return Math.abs(ageDt.getUTCFullYear() - 1970);
+};

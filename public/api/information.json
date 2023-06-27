@@ -1,31 +1,23 @@
 {
-    "firstName": "Joseph",
-    "lastName": "Bieber",
-    "fullName": "Joseph Bieber",
+    "firstName": "Paulo",
+    "lastName": "Urbano Rivera",
+    "fullName": "Paulo Urbano Rivera",
     "thumbImage": "/images/formal-image.png",
     "largeImage": "/images/about-image.jpg",
-    "bio": "I am a frontend web developer. I can provide clean code and pixel perfect design. I also make website more & more interactive with web animations.",
+    "bio": "Soy un Desarrollador FullStack en constante aprendizaje. Con experiencia tanto en la construcción de servicios como en el diseño web.",
     "age": 27,
-    "nationality": "American",
-    "languages": [
-        "English",
-        "French"
-    ],
-    "address": "121 King Street, Melbourne, United States",
-    "freelance": "Available",
+    "nationality": "Chilena",
+    "languages": [],
+    "address": "",
+    "freelance": "Disponible",
     "socialAddress": {
-        "facebook": "https://facebook.com",
-        "twitter": "https://twitter.com",
-        "github": "https://github.com",
-        "linkedin": "https://linkedin.com",
-        "dribbble": "https://dribbble.com"
+        "github": "https://github.com/pauloc1989",
+        "linkedin": "https://www.linkedin.com/in/paulo-c%C3%A9sar-urbano-rivera-ab033562/",
+        "stackoverflow": "https://es.stackoverflow.com/users/30131/paulo-urbano-rivera"
     },
-    "phoneNumbers": [
-        "+012-3456-7891",
-        "+012-3456-7892"
-    ],
+    "phoneNumbers": [],
     "emailAddress": [
-        "demomail@demo.com",
-        "demomail2@demo.com"
+        "pauloc1989@hotmail.com",
+        "paulo.1989.dev@gmail.com"
     ]
 }
