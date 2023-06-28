@@ -22,8 +22,15 @@ export const imageLoader = (src) => {
 };
 
 export const getAge = () => {
-    const diff = Date.now() - new Date(1989, 9, 28).getTime();
-    const ageDt = new Date(diff);
+    const diff= Date.now() - new Date(1989, 9, 28).getTime();
+    const ageDt= new Date(diff);
 
     return Math.abs(ageDt.getUTCFullYear() - 1970);
+};
+
+export const getAverageByCategory = (data, arrayToMatch) => {
+    const result = data.filter(x => arrayToMatch.includes(x.category)).map(x => +x.value);
+    const sumResult = result.reduce((prev, curr) => prev + curr, 0);
+
+    return sumResult / result.length;
 };

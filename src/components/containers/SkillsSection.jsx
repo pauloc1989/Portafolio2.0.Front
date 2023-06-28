@@ -33,7 +33,7 @@ const SkillsSection = () => {
 
     return (
         <div className="skills-wrapper">
-            <TechSkills />
+            <TechSkills skills={skills} />
 
             <div className="py-7" />
 

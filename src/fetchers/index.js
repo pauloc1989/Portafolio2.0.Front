@@ -10,8 +10,8 @@ const getServices = async () => {
   return res.data;
 };
 
-const getTechskills = async () => {
-  let res = await http.get(`/api/techskills.json`);
+const getCategories = async () => {
+  let res = await http.get(`/api/categories.json`);
   return res.data;
 };
 
@@ -48,7 +48,7 @@ const getClientReviews = async () => {
 export {
   getInformation,
   getServices,
-  getTechskills,
+  getCategories,
   getLanguageskills,
   getPortfolioFilters,
   getPortfolios,
