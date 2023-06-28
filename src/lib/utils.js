@@ -1,3 +1,8 @@
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+
+dayjs.extend(utc);
+
 export const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
@@ -34,3 +39,33 @@ export const getAverageByCategory = (data, arrayToMatch) => {
 
     return sumResult / result.length;
 };
+
+export const formatDateByNanoAndSeconds = (start, end)=> ({
+    startDate: nanoAndSecondsToDate(start.seconds, start.nanoseconds),
+    endDate: end ? nanoAndSecondsToDate(end.seconds, end.nanoseconds) : null
+});
+
+export const orderByDate = data => {
+    const formatList = data.map(item => ({ ...item, start: item.start.seconds, end: !item.currentJob ? item.end?.seconds : '' }))
+    const sort = orderByProperty(formatList, 'start', true)
+
+    return formatDate(sort)
+}
+
+export const orderByProperty = (data, property, desc= false)=> !desc ? data.sort((a, b)=> a[property] > b[property] ? 1 : b[property] > a[property] ? -1 : 0) : data.sort((a, b)=> (a[property] < b[property]) ? 1 : (b[property] < a[property]) ? -1 : 0);
+
+const nanoAndSecondsToDate = (seconds, nanoseconds)=> new Date(seconds * 1000 + nanoseconds/1000000);
+
+const formatDate = data => {
+    return data.map(item => {
+        const { start, end } = { start: unixToDate(item.start), end: unixToDate(item?.end) };
+
+        return {
+            ...item,
+            start: dayjs(start).format('DD/MM/YYYY'),
+            end: !item.currentJob ? dayjs(end).format('DD/MM/YYYY') : ''
+        };
+    });
+};
+
+const unixToDate = value => new Date(value * 1000);

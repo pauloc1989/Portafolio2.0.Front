@@ -15,11 +15,6 @@ const getCategories = async () => {
   return res.data;
 };
 
-const getLanguageskills = async () => {
-  let res = await http.get(`/api/languageskills.json`);
-  return res.data;
-};
-
 const getPortfolioFilters = async () => {
   let res = await http.get(`/api/portfoliofilters.json`);
   return res.data;
@@ -27,11 +22,6 @@ const getPortfolioFilters = async () => {
 
 const getPortfolios = async () => {
   let res = await http.get(`/api/portfolios.json`);
-  return res.data;
-};
-
-const getJobExperience = async () => {
-  let res = await http.get(`/api/jobexperience.json`);
   return res.data;
 };
 
@@ -49,10 +39,8 @@ export {
   getInformation,
   getServices,
   getCategories,
-  getLanguageskills,
   getPortfolioFilters,
   getPortfolios,
-  getJobExperience,
   getEducationBackground,
   getClientReviews,
 };
