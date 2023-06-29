@@ -5,23 +5,8 @@ const getInformation = async () => {
   return res.data;
 };
 
-const getServices = async () => {
-  let res = await http.get(`/api/services.json`);
-  return res.data;
-};
-
 const getCategories = async () => {
   let res = await http.get(`/api/categories.json`);
-  return res.data;
-};
-
-const getPortfolioFilters = async () => {
-  let res = await http.get(`/api/portfoliofilters.json`);
-  return res.data;
-};
-
-const getPortfolios = async () => {
-  let res = await http.get(`/api/portfolios.json`);
   return res.data;
 };
 
@@ -37,10 +22,7 @@ const getClientReviews = async () => {
 
 export {
   getInformation,
-  getServices,
   getCategories,
-  getPortfolioFilters,
-  getPortfolios,
   getEducationBackground,
   getClientReviews,
 };

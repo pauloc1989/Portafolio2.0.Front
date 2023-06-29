@@ -3,13 +3,50 @@ import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Blog } from "../elements";
 import { Spinner } from "../utils";
+import firebase from '../../database/firebase/config';
+import { orderByProperty } from "../../lib/utils";
 
 const BlogSection = ({ posts }) => {
   const [mounted, setMounted] = useState(false);
+  const [projects, setProjects] = useState([]);
+
   const sliderRef = useRef(null);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    firebase.db.collection('Projects').onSnapshot(query => {
+      const list = query.docs.map(doc => {
+        const {
+          active,
+          company,
+          creationYear,
+          description,
+          name,
+          platform,
+          thumbUrl,
+          urlImage
+        } = doc.data();
+
+        return {
+          id: doc.id,
+          active,
+          company,
+          creationYear,
+          description,
+          name,
+          platform,
+          thumbUrl,
+          urlImage
+        };
+      }).filter(x => !!x.active);
+
+      const result = orderByProperty(list, 'creationYear', true);
+
+      setProjects(result);
+    });
   }, []);
 
   const handlePrev = useCallback(() => {
@@ -28,7 +65,8 @@ const BlogSection = ({ posts }) => {
         <Spinner />
       </div>
     );
-  if (!posts) return null;
+
+  if (projects.length === 0) return null;
 
   return (
     <div className="swiper-holder">
@@ -36,9 +74,7 @@ const BlogSection = ({ posts }) => {
         modules={[Autoplay]}
         spaceBetween={28}
         slidesPerView={3}
-        autoplay={{
-          delay: 5000,
-        }}
+        autoplay={{ delay: 5000 }}
         centerInsufficientSlides={true}
         ref={sliderRef}
         breakpoints={{
@@ -53,11 +89,18 @@ const BlogSection = ({ posts }) => {
           },
         }}
       >
-        {posts &&
-          posts.map((post, index) => (
+        {projects.length > 0 &&
+          projects.map((project, index) => (
             <SwiperSlide key={index}>
               <div className="slider-item">
-                <Blog post={post} />
+                <Blog
+                  post={{
+                    title: project.name,
+                    date: project.creationYear,
+                    thumb: project.thumbUrl,
+                    description: project.description
+                  }}
+                />
               </div>
             </SwiperSlide>
           ))}
