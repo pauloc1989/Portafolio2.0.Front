@@ -170,20 +170,7 @@ const MobileNavigation = ({ changeState }) => {
             )}
           </li>
         </ul>
-        <div className="header-button pt-8">
-          <ScrollLink
-            activeClass="active"
-            to="section-contact"
-            spy={true}
-            smooth="easeInQuad"
-            offset={-74}
-            duration={1000}
-            className="btn btn-small"
-            onClick={() => handleClick()}
-          >
-            <span>Hire Me</span>
-          </ScrollLink>
-        </div>
+        <div className="header-button pt-8" />
       </nav>
     </>
   );

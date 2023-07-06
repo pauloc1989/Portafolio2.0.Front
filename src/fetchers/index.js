@@ -10,19 +10,7 @@ const getCategories = async () => {
   return res.data;
 };
 
-const getEducationBackground = async () => {
-  let res = await http.get(`/api/educationbackground.json`);
-  return res.data;
-};
-
-const getClientReviews = async () => {
-  let res = await http.get(`/api/clientsreview.json`);
-  return res.data;
-};
-
 export {
   getInformation,
-  getCategories,
-  getEducationBackground,
-  getClientReviews,
+  getCategories
 };

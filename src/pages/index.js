@@ -68,7 +68,7 @@ const index = () => {
             >
                 <div className="container mx-auto">
                     <SectionHeading animated={false} title="Portafolio" watermark="Works"/>
-                    <BlogSection posts={[]}/>
+                    <BlogSection />
                 </div>
             </Section>
             {/* End Blog Section */}
@@ -79,7 +79,7 @@ const index = () => {
                 className="reviews-section pt-24 lg:pt-28 xl:pt-32"
             >
                 <div className="container mx-auto">
-                    <SectionHeading animated={false} title="Recomendaciones" watermark="Reviews"/>
+                    <SectionHeading animated={false} title="Recomendaciones" watermark="References"/>
                     <ReviewsSection/>
                 </div>
             </Section>

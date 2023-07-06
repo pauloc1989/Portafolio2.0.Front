@@ -22,16 +22,16 @@ const Review = ({ review: { name, meta, givenreview, image, text } }) => {
       <p className="mb-2 text-body">
         <small>{meta}</small>
       </p>
-      <div className="review-stars mb-3">
-        <StarRatings
-          rating={Number(givenreview)}
-          starRatedColor="#FFD233"
-          numberOfStars={5}
-          name="rating"
-          starSpacing="2px"
-          starDimension="18px"
-        />
-      </div>
+      {/*<div className="review-stars mb-3">*/}
+      {/*  <StarRatings*/}
+      {/*    rating={Number(givenreview)}*/}
+      {/*    starRatedColor="#FFD233"*/}
+      {/*    numberOfStars={5}*/}
+      {/*    name="rating"*/}
+      {/*    starSpacing="2px"*/}
+      {/*    starDimension="18px"*/}
+      {/*  />*/}
+      {/*</div>*/}
       <p>{text}</p>
     </div>
   );

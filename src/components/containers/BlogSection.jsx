@@ -6,7 +6,7 @@ import { Spinner } from "../utils";
 import firebase from '../../database/firebase/config';
 import { orderByProperty } from "../../lib/utils";
 
-const BlogSection = ({ posts }) => {
+const BlogSection = () => {
   const [mounted, setMounted] = useState(false);
   const [projects, setProjects] = useState([]);
 
