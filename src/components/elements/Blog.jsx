@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {imageLoader, shimmer, toBase64} from "../../lib/utils";
 
-const Blog = ({post: {title, date, thumb, description,}}) => {
+const Blog = ({post: {title, date, thumb, description}}) => {
     return (
         <article className="blog card p-4 md:p-5">
             <div className="blog-top relative mb-4">

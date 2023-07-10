@@ -15,14 +15,6 @@ const Footer = () => {
           <div className="w-full md:w-auto">
             <SocialIcons data={data.socialAddress} />
           </div>
-          <p className="mb-0 w-full md:w-auto">
-            &copy; {new Date().getFullYear()}, All right reserved
-            <Link href="/">
-              <a className="pl-1.5 font-medium text-heading no-underline hover:text-primary">
-                NuclearThemes
-              </a>
-            </Link>
-          </p>
         </div>
       </div>
     </footer>

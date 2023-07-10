@@ -1,8 +1,9 @@
 import {
     RiFacebookFill,
     RiGithubFill,
-    RiLinkedinBoxFill, RiStackOverflowFill,
-    RiTwitterFill,
+    RiLinkedinBoxFill,
+    RiStackOverflowFill,
+    RiTwitterFill
 } from "react-icons/ri";
 
 const SocialIcons = ({ data, rounded }) => {

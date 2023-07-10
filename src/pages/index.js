@@ -80,10 +80,5 @@ export default index;
 export function getStaticProps() {
     const {posts} = getPostsByPage();
 
-    return {
-        props: {
-            posts,
-        },
-        revalidate: 10,
-    };
+    return { props: { posts }, revalidate: 10 };
 }
