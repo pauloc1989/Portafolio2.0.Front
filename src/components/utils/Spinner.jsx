@@ -4,7 +4,7 @@ const Spinner = () => {
       <span className="relative z-20 text-sm uppercase tracking-wider">
         Loading
       </span>
-      <span className="absolute z-10 h-full w-full animate-spin rounded-full border-l-2 border-t-2 border-white border-opacity-50 bg-grey-lighten"></span>
+      <span className="absolute z-10 h-full w-full animate-spin rounded-full border-l-2 border-t-2 border-white border-opacity-50 bg-grey-lighten" />
     </div>
   );
 };

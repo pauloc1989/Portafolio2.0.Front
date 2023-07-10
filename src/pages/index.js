@@ -26,10 +26,7 @@ const index = () => {
             {/* End Hero Section */}
 
             {/* Start About Section */}
-            <Section
-                name="section-about"
-                className="about-section pt-24 lg:pt-28 xl:pt-32"
-            >
+            <Section name="section-about" className="about-section pt-24 lg:pt-28 xl:pt-32">
                 <div className="container mx-auto">
                     <SectionHeading animated={false} title="Sobre mí" watermark="About"/>
                     <AboutSection/>
@@ -38,10 +35,7 @@ const index = () => {
             {/* End About Section */}
 
             {/* Start Skills Section */}
-            <Section
-                name="section-skills"
-                className="skills-section pt-24 lg:pt-28 xl:pt-32"
-            >
+            <Section name="section-skills" className="skills-section pt-24 lg:pt-28 xl:pt-32">
                 <div className="container mx-auto">
                     <SectionHeading animated={false} title="Mis Habilidades" watermark="Skills"/>
                     <SkillsSection/>
@@ -50,10 +44,7 @@ const index = () => {
             {/* End Skills Section */}
 
             {/* Start Resume Section */}
-            <Section
-                name="section-resume"
-                className="resume-section pt-24 lg:pt-28 xl:pt-32"
-            >
+            <Section name="section-resume" className="resume-section pt-24 lg:pt-28 xl:pt-32">
                 <div className="container mx-auto">
                     <SectionHeading animated={false} title="Currículum" watermark="Resume"/>
                     <ResumeSection/>
@@ -62,10 +53,7 @@ const index = () => {
             {/* End Resume Section */}
 
             {/* Start Blog Section */}
-            <Section
-                name="section-blog"
-                className="news-section pt-24 lg:pt-28 xl:pt-32"
-            >
+            <Section name="section-blog" className="news-section pt-24 lg:pt-28 xl:pt-32">
                 <div className="container mx-auto">
                     <SectionHeading animated={false} title="Portafolio" watermark="Works"/>
                     <BlogSection />
@@ -74,10 +62,7 @@ const index = () => {
             {/* End Blog Section */}
 
             {/* Start Reviews Section */}
-            <Section
-                name="section-reviews"
-                className="reviews-section pt-24 lg:pt-28 xl:pt-32"
-            >
+            <Section name="section-reviews" className="reviews-section pt-24 lg:pt-28 xl:pt-32">
                 <div className="container mx-auto">
                     <SectionHeading animated={false} title="Recomendaciones" watermark="References"/>
                     <ReviewsSection/>
@@ -85,7 +70,7 @@ const index = () => {
             </Section>
             {/* End Reviews Section */}
 
-            <span className="block pb-24 lg:pb-28 xl:pb-32"></span>
+            <span className="block pb-24 lg:pb-28 xl:pb-32" />
         </Layout>
     );
 };

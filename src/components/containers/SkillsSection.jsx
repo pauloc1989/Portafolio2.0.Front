@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import LanguageSkills from "./LanguageSkills";
 import TechSkills from "./TechSkills";
 import firebase from '../../database/firebase/config';
+import { orderByProperty } from "../../lib/utils";
 
 const SkillsSection = () => {
     const [ skills, setSkills ] = useState([]);
@@ -27,7 +28,7 @@ const SkillsSection = () => {
                };
             }).filter(x => !!x.active);
 
-            setSkills(list);
+            setSkills(orderByProperty(list, 'tech'));
         });
     }, []);
 

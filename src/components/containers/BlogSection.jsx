@@ -78,15 +78,9 @@ const BlogSection = () => {
         centerInsufficientSlides={true}
         ref={sliderRef}
         breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
+          320: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
         }}
       >
         {projects.length > 0 &&
@@ -105,8 +99,8 @@ const BlogSection = () => {
             </SwiperSlide>
           ))}
       </Swiper>
-      <button className="swiper-button-prev" onClick={handlePrev}></button>
-      <button className="swiper-button-next" onClick={handleNext}></button>
+      <button className="swiper-button-prev" onClick={handlePrev} />
+      <button className="swiper-button-next" onClick={handleNext} />
     </div>
   );
 };

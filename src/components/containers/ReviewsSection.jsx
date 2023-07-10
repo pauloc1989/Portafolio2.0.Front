@@ -1,15 +1,11 @@
 import { useCallback, useRef, useState, useEffect } from "react";
-import { useQuery } from "react-query";
 import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { getClientReviews } from "../../fetchers";
 import { Review } from "../elements";
 import firebase from '../../database/firebase/config';
 import { orderByProperty } from '../../lib/utils';
 
 const ReviewsSection = () => {
-  const { data } = useQuery("clientreviews", getClientReviews);
-
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
@@ -66,15 +62,9 @@ const ReviewsSection = () => {
         centerInsufficientSlides={true}
         ref={sliderRef}
         breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          640: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
+          320: { slidesPerView: 1 },
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
         }}
       >
         {testimonials.length > 0 && testimonials?.map((testimonial, index) => (
@@ -90,8 +80,8 @@ const ReviewsSection = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <button className="swiper-button-prev" onClick={handlePrev}></button>
-      <button className="swiper-button-next" onClick={handleNext}></button>
+      <button className="swiper-button-prev" onClick={handlePrev} />
+      <button className="swiper-button-next" onClick={handleNext} />
     </div>
   );
 };

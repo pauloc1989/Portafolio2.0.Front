@@ -8,6 +8,7 @@ const ProgressCircle = ({ skill: { title, percentage } }) => {
       opacity: 1,
     },
   };
+
   return (
     <div className="circleprogress card hovercard relative p-4 text-center md:p-5">
       <div className="relative mb-2 inline-block text-primary">
