@@ -56,7 +56,7 @@ const Navigation = () => {
           {(
               <ScrollLink
                   activeClass="!text-primary"
-                  to="section-portfolios"
+                  to="section-blog"
                   spy={true}
                   smooth="easeInQuad"
                   offset={-74}
