@@ -17,7 +17,7 @@ const works = () => {
       >
         <div className="container mx-auto">
           <SectionHeading title="My Works" watermark="Works" animated={false} />
-          <PortfoliosSection />
+            {/*<PortfoliosSection />*/}
         </div>
       </section>
       {/* End Portfolios Section */}

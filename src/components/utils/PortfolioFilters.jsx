@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
-import { getPortfolioFilters } from "../../fetchers";
 
 const PortfolioFilters = ({ currentFilter, filterHandler }) => {
-    const { data } = useQuery("portfolio-filters", getPortfolioFilters);
+    return null;
+    /*const { data } = useQuery("portfolio-filters", getPortfolioFilters);
 
     if (!data) return null;
 
@@ -30,7 +30,7 @@ const PortfolioFilters = ({ currentFilter, filterHandler }) => {
                 </button>
             ))}
         </div>
-    );
+    );*/
 };
 
 export default PortfolioFilters;
