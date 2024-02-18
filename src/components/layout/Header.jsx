@@ -1,15 +1,10 @@
 import {useState} from "react";
-import {RiMenuLine} from "react-icons/ri";
-import {Link as ScrollLink} from "react-scroll";
 import useEventListener from "../../hooks/useEventListener";
-import MobileNavigation from "./MobileNavigation";
 import Navigation from "./Navigation";
-import {motion, AnimatePresence} from "framer-motion";
 import {Logo} from "../utils";
 
 const Header = () => {
     const [sticky, setSticky] = useState(false);
-    const [mobileMenu, setMobileMenu] = useState(false);
 
     const isSticky = () => {
         const scrollTop = window.scrollY;
@@ -28,30 +23,7 @@ const Header = () => {
         >
             <div className="container mx-auto">
                 <div className="header-inner flex items-center justify-between">
-                    <Logo url="/homepage2" text/>
-                    <div className="header-mobilenav block lg:hidden">
-                        <button
-                            className="btn btn-small btn-transparent px-3 text-3xl"
-                            onClick={() => setMobileMenu(true)}
-                        >
-                            <RiMenuLine/>
-                        </button>
-                        <AnimatePresence>
-                            {mobileMenu && (
-                                <motion.div
-                                    initial={{translateY: "100vh"}}
-                                    animate={{translateY: "0px"}}
-                                    exit={{translateY: "-100vh"}}
-                                    transition={{
-                                        duration: 0.5,
-                                    }}
-                                    className="fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-grey p-4 text-center"
-                                >
-                                    <MobileNavigation changeState={setMobileMenu}/>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
+                    <Logo url="/" text/>
                     <div className="header-nav hidden lg:block">
                         <Navigation/>
                     </div>
